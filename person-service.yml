@@ -7,6 +7,11 @@ spring:
       bindings:
         input:
           destination: persons
+      rabbit:
+        bindings:
+          input:
+            consumer:
+              bindingRoutingKey: person-service
 
 server:
   compression:
