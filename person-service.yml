@@ -1,0 +1,17 @@
+server:
+  compression:
+    enabled: true
+    mime-types: application/json
+    min-response-size: 1
+  display-name: Person Service
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+liquibase:
+  change-log: classpath:/db/changelog/db.changelog-master.xml
