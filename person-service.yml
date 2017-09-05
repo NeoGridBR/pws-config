@@ -1,3 +1,13 @@
+spring:
+  jackson:
+    date-format: java.text.SimpleDateFormat
+    default-property-inclusion: non_empty
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: persons
+
 server:
   compression:
     enabled: true
