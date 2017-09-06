@@ -3,7 +3,7 @@ cloud:
     credentials:
       accessKey: 1DPTE3KBQ9WFIVEG7IRW
       secretKey: sAJfYrZN43kjJkTN6vGUzv8KZaSPUTNDMkaEzQ6e
-      endpoint: http://10.25.10.51:8080
+      endpoint: http://177.184.18.105:8080/
 
 spring:
   cloud:
