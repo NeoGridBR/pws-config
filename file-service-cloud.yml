@@ -1,0 +1,23 @@
+cloud:
+  aws:
+    credentials:
+      accessKey: 1DPTE3KBQ9WFIVEG7IRW
+      secretKey: sAJfYrZN43kjJkTN6vGUzv8KZaSPUTNDMkaEzQ6e
+      endpoint: http://10.25.10.51:8080
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: ngcloud
+          contentType: application/json
+    rabbit:
+      bindings:
+        output:
+          producer:
+            routingKeyExpression: "'person-ingest'"
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
