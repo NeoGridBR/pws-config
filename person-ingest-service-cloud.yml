@@ -1,11 +1,32 @@
-info:
-  app:
-    name: ${spring.application.name}
+cloud:
+  aws:
+    credentials:
+      accessKey: 1DPTE3KBQ9WFIVEG7IRW
+      secretKey: sAJfYrZN43kjJkTN6vGUzv8KZaSPUTNDMkaEzQ6e
+      endpoint: http://10.25.10.51:8080
 
-management:
-  security:
-    enabled: false
-
-security:
-  basic:
-    enabled: false
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: persons # exchange
+          contentType: application/json #
+        input:
+          destination: ngcloud # exchange
+          group: "person-ingest.queue" # queue
+      rabbit:
+        bindings:
+          input:
+            consumer:
+              bindingRoutingKey: upload-person
+          output:
+            producer:
+              routingKeyExpression: "'person-service'"
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  jackson:
+    date-format: java.text.SimpleDateFormat
+    default-property-inclusion: non_empty
