@@ -16,7 +16,7 @@ spring:
       bindings:
         output:
           producer:
-            routingKeyExpression: "#{headers.key}"
+            routingKeyExpression: "'upload-person'"
   http:
     multipart:
       max-file-size: 100MB
