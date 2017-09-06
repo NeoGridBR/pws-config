@@ -12,11 +12,11 @@ spring:
         output:
           destination: ngcloud
           contentType: application/json
-    rabbit:
-      bindings:
-        output:
-          producer:
-            routingKeyExpression: "'upload-person'"
+      rabbit:
+        bindings:
+          output:
+            producer:
+              routingKeyExpression: "#{headers.key}"
   http:
     multipart:
       max-file-size: 100MB
