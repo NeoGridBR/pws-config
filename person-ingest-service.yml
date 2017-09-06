@@ -1,0 +1,12 @@
+info:
+  app:
+    name: ${spring.application.name}
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
