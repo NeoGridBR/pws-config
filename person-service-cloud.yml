@@ -8,4 +8,4 @@ spring:
 
 liquibase:
     contexts: cloud
-    drop-first: false
+    drop-first: true
