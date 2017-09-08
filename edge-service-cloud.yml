@@ -13,3 +13,9 @@ zuul:
     monitoring:
       path: /monitoring/**
       serviceId: person-ingest-service
+      
+spring:
+  http:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
