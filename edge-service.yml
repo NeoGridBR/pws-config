@@ -9,3 +9,9 @@ management:
 security:
   basic:
     enabled: false
+    
+spring:
+  http:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
